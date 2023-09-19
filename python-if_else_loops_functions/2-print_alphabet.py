@@ -5,4 +5,4 @@ for i in range(97,123):
     ascii_char = chr(i)
     ascii_line += ascii_char
 
-print(ascii_line)
+print(f"{ascii_line}")
