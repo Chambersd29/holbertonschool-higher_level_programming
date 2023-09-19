@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-ascii_line = ""
+#2-print_alphabet.py
 
-for i in range(97,123):
-    ascii_char = chr(i)
-    ascii_line += ascii_char
-
-print(f"{ascii_line}")
+for letter in range(97, 123):
+	print("{}".format(chr(letter)), end="")
