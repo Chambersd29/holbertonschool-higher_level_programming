@@ -4,4 +4,4 @@ def print_sorted_dictionary(a_dictionary):
     new_a = a_dictionary.copy()
     sorted_keys = sorted(new_a.keys())
     for key in sorted_keys:
-        print(key, ":", new_a[key])
+        print("{}: {}".format(key, new_a[key]))
