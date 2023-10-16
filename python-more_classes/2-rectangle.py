@@ -29,7 +29,7 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
-
+    
     def area(self):
         return (self.__width * self.__height)
 
@@ -37,14 +37,3 @@ class Rectangle:
         if self.__width == 0 or self.__height ==0:
             return (0)
         return ((self.__width * 2) + (self.__height * 2))
-    
-    def __str__(self):
-        if self.__width == 0 or self.__height == 0:
-            return (0)
-        rectangle_str = ""
-        for rows in range(self.__height):
-            for columns in range(self.__width):
-                rectangle_str += "#"
-            if rows < self.__height - 1:
-                rectangle_str += "\n"
-        return(rectangle_str)
