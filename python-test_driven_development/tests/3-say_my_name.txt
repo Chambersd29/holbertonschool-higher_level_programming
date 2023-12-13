@@ -1,0 +1,57 @@
+El módulo ``3-say_my_name`` contiene la función:``say_my_name``
+======================================================================
+
+La función ``say_my_name`` toma dos argumentos: eh imprime en la stdout
+el siguiente mensaje: My name is <first name> <last name>.
+
+La función puede lanzar varios errores:
+-Sí tanto first_name o last_name no son string se lanzará una excepction
+ TypeError("<first_name | last_name> must be a string")
+A continuación se presentan algunos ejemplos de cómo usar la función
+``say_my_name``:
+----------------------------------------------------------------------
+
+Este un archivo de pruebas, en modo interactivo.
+Empezamos importando ``say_my_name`` del modulo ``3-say_my_name``:
+
+Importación:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Comprobando con casos regulares:
+
+    >>> say_my_name("Jhony")
+    My name is Jhony 
+
+    >>> say_my_name("Jhony", "Escriba")
+    My name is Jhony Escriba
+
+    >>> say_my_name("", "Escriba")
+    My name is  Escriba
+
+    >>> name = ""
+    >>> last_name = ""
+    >>> say_my_name(name, last_name)
+    My name is  
+
+Comprabando con otros tipo de datos:
+
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Jhony", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
