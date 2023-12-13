@@ -1,0 +1,90 @@
+El módulo ``0-add_integer``
+===============================
+
+Usando la función ``add_integer`` 
+--------------------------------
+
+Este archivo de pruebas, es modo interactivo.
+Primero importamos ``add_integer`` del modulo ``0-add_integer``:
+
+El módulo ``0-add_integer``
+=================================
+
+Usando la función ``add_integer``
+---------------------------------
+
+Este un archivo de pruebas, en modo interactivo.
+Empezamos importando ``add_integer`` del modulo ``0-add_integer``:
+
+Importación:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Test con números regulares:
+
+    >>> add_integer(4, 9)
+    13
+
+    >>> add_integer(4.5, 9)
+    13
+
+    >>> add_integer(4.5)
+    102
+
+    >>> add_integer(4)
+    102
+
+Test con Exception:
+
+    >>> add_integer()
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+    >>> add_integer('4')
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer(4, '9')
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    >>> add_integer(4, -9)
+    -5
+
+    >>> add_integer(-4)
+    94
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    >>> add_integer(4, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    >>> add_integer(float('NaN'), 4)
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+Test con números infinitos:
+
+    >>> add_integer(float('inf'), float('inf'))
+    Traceback (most recent call last):
+        ..
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float('inf'), -float('inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
