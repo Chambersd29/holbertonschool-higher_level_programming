@@ -1,0 +1,56 @@
+El módulo ``5-text_indentation`` contiene la función:``text_indentation``
+======================================================================
+
+La función ``text_indentation`` toma un argumento: 
+Imprime un texto con 2 líneas nuevas después de cada uno de estos
+caracteres: ., ? y :
+
+La función puede lanzar un error:
+-Sí text no es un str se lanzará una Excepction
+ TypeError("text must be a string")
+
+A continuación se presentan algunos ejemplos de cómo usar la función
+``text_indentation``:
+----------------------------------------------------------------------
+
+Este un archivo de pruebas, en modo interactivo.
+Empezamos importando ``text_indentation`` del modulo ``5-text_indentation``:
+
+Importación:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Comprobando con casos regulares:
+
+    >>> text_indentation("hello world")
+    hello world
+
+    >>> text_indentation("hello world.hello world?hello world:")
+    hello world.
+    <BLANKLINE>
+    hello world?
+    <BLANKLINE>
+    hello world:
+    <BLANKLINE>
+
+    >>> text_indentation("")
+
+    >>> text_indentation("...")
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+
+Comprobando sin argumentos y None:
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
