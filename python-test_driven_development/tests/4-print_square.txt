@@ -1,0 +1,60 @@
+El módulo ``4-print_square`` contiene la función:``print_square``
+======================================================================
+
+La función ``print_square`` toma un argumento: eh imprime en la stdout
+un cuadrado representado con '#'.
+
+La función puede lanzar varios errores:
+-Sí size no es un int se lanzará una Excepction
+ TypeError("size must be an integer")
+-Sí size < 0, lanzará Exception ValueError("size must be >= 0")
+-Sí type(size) == float y size < 0 lanzará TypeError("size must be an integer")
+
+A continuación se presentan algunos ejemplos de cómo usar la función
+``print_square``:
+----------------------------------------------------------------------
+
+Este un archivo de pruebas, en modo interactivo.
+Empezamos importando ``say_my_name`` del modulo ``3-say_my_name``:
+
+Importación:
+
+    >>> print_square = __import__('4-print_square').print_square
+
+Comprobando con casos regulares:
+
+    >>> print_square(2)
+    ##
+    ##
+
+    >>> print_square(-1)
+    Traceback (most recent call last):
+        ...
+    ValueError: size must be >= 0
+
+    >>> print_square(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+    >>> print_square()
+    Traceback (most recent call last):
+        ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+    >>> print_square(0)
+
+    >>> print_square(-1.5)
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+    >>> print_square(1.5)
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+    >>> print_square("4")
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
