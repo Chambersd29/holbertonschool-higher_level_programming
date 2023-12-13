@@ -1,27 +1,26 @@
 #!/usr/bin/python3
 """
-    define la función matrix
+Este modulo define la función matrix_divided.
 """
+
 
 def matrix_divided(matrix, div):
     """
-    esta funcion debe recibir una lista de lista con int o float,
-    debe divir cada elemtno entre div y regresar una lista nueva.
-    cada elemento redondeado a 2 decimales.
-    
+    Esta función debe recibir una lista de lista con int o float,
+    debe dividir cada elemento entre div y regresar una lista nueva.
+    Cada elemento será redondeado a 2 decimales.
     Args:
-        matrix([[]]): Matrix es una lista de lista con int o float.
+        matrix ([[]]): Matrix es una lista de lista con int o float.
         div (int || float): Será el divisor de cada item dentro matrix.
-
     Raises:
-        TypeError: Si matrix no es lista de lista con int o float.
-        TypeError (len(matrix[i])): si cada lista interna tiene un tamaño distinto.
-        TypeError (div !=int | float): Si div no es un int o float
-        ZeroDivisionError (div == 0): si div es 0.
+        TypeError : Sí matrix no es lista de lista con int o float.
+        TypeError (len(matrix[i])): Sí cada lista interna tiene un
+                    tamaño distinto.
+        TypeError (div != int | float):Sí div no es un int o float
+        ZeroDivisionError (div == 0) : Sí div es 0.
     Returns:
-    new_list ([[]])
+        new_list ([[]])
     """
-
     MSG_TYPERROR_LIST = "matrix must be a matrix (list of lists)" \
                         " of integers/floats"
     MSG_ERROR_SIZE_LIST = "Each row of the matrix must have the same size"
