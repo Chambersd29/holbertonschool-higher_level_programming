@@ -1,0 +1,83 @@
+El módulo ``2-matrix_divided`` contiene la función:``matrix_divided``
+======================================================================
+
+La función ``matrix_divided`` toma dos argumentos: una matriz
+(una lista de listas de números enteros o flotantes) y un número.
+Divide cada elemento de la matriz por el número y retorna una nueva
+matriz con los resultados redondeados a dos decimales.Usando la función
+``matrix_divided``
+
+La función puede lanzar varios errores:
+- Si la matriz no es una lista de listas de números enteros o flotantes,
+  lanza un error TypeError con el mensaje "matrix must be a matrix
+  (list of lists) of integers/floats".
+- Si las listas internas de la matriz no tienen todas el mismo tamaño,
+  lanza un error TypeError con el mensaje "Each row of the matrix must
+  have the same size".
+- Si el número es cero, lanza un error ZeroDivisionError con el mensaje
+  "division by zero".
+
+A continuación se presentan algunos ejemplos de cómo usar la función
+``matrix_divided``:
+----------------------------------------------------------------------
+
+Este un archivo de pruebas, en modo interactivo.
+Empezamos importando ``matrix_divided`` del modulo ``2-matrix_divided``:
+
+Importación:
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Comprobando con tipos int y float:
+
+    >>> m = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix_divided(m, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+    >>> m = [[1.5, 2, 8.0], [4, 50.0, 3.6]]
+    >>> matrix_divided(m, 2)
+    [[0.75, 1.0, 4.0], [2.0, 25.0, 1.8]]
+
+    >>> matrix_divided(m, 2.5)
+    [[0.6, 0.8, 3.2], [1.6, 20.0, 1.44]]
+
+Comprobando una lista de largo distinto.
+
+    >>> list_num = [[1, 2, 3], [4, 5, 8, 6], [25, 2]]
+    >>> matrix_divided(list_num, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: Each row of the matrix must have the same size
+
+Comprobando con listas vacias:
+
+    >>> list_empty = []
+    >>> matrix_divided(list_empty, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> list_empty = [[]]
+    >>> matrix_divided(list_empty, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Comprobando con otro tipo de datos:
+
+    >>> tipo_diccionario = dict(num1 = 15, num2 = 2)
+    >>> matrix_divided(tipo_diccionario, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: 'NoneType' object is not iterable
+
+    >>> matrix = [[1, 2, '3'], [4, '5', 6], [5, 8, 9]]
+    >>> matrix_divided(matrix, 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
