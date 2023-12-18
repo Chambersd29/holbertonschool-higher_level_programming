@@ -1,2 +1,0 @@
-#arhivo con conexión de prueba.
-connecta.py
