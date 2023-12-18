@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 """
-    Script que lista todos los estados de la base de datos
+    A script that lists all states from the database hbtn_0e_0_usa
+    Username, password and database names are given as user args
 """
 
 
