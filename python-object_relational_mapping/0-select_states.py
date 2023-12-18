@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-	SCript que lista todos los estados de la base de datos
+    Script que lista todos los estados de la base de datos
 """
 
 
